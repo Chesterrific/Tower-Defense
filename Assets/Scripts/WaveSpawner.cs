@@ -24,7 +24,8 @@ public class WaveSpawner : MonoBehaviour {
         waveCountdownText.text = Mathf.Round(countdown).ToString();
     }
 
-    /* https://www.youtube.com/watch?v=Vrld13ypX_I
+    /* 
+     * https://www.youtube.com/watch?v=Vrld13ypX_I
      * advanced wave spawner
      */
     IEnumerator SpawnWave()  
