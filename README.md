@@ -1,2 +1,2 @@
 # Tower-Defense
-# disclaimer: This game was created solely for practice and a lot of credit goes to Brackeys and his helpful game creation tutorials.
+# Disclaimer: This game was created with the help of online tutorials from Brackeys. And its sole purpose was to help me practice and learn C# and how to use the Unity engine.
