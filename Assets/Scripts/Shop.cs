@@ -3,8 +3,10 @@
 public class Shop : MonoBehaviour {
     
     //items available in shop
+    [Header("Turrets")]
     public TurretBlueprint standardTurret;
     public TurretBlueprint missileTurret;
+    public TurretBlueprint laserTurret;
 
     BuildManager buildManager;
 
@@ -24,5 +26,10 @@ public class Shop : MonoBehaviour {
     public void SelectMissileTurret()
     {
         buildManager.SelectTurretToBuild(missileTurret);
+    }
+
+    public void SelectLaserTurret()
+    {
+        buildManager.SelectTurretToBuild(laserTurret);
     }
 }

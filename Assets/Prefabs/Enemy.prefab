@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 135289747902031094}
   - component: {fileID: 23148765264231838}
   - component: {fileID: 114873146091143164}
+  - component: {fileID: 114762613931166000}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -84,6 +85,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1613056848008766}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114762613931166000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613056848008766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390ee3dccc90c0b4797e079108a39b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114873146091143164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739d1c3bd14735a4faaa39e17085defc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSpeed: 10
   speed: 10
   health: 100
   value: 50

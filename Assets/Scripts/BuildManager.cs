@@ -7,10 +7,6 @@ public class BuildManager : MonoBehaviour {
 
     public GameObject buildEffect;
 
-    //Turrets available in shop.
-    public GameObject standardTurretPrefab;
-    public GameObject missileTurretPrefab;
-
     //Turret to be built held by this variable.
     private TurretBlueprint turretToBuild;
 
