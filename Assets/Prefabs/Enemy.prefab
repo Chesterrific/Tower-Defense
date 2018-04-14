@@ -96,6 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  health: 100
+  value: 50
+  deathEffect: {fileID: 1461460230971248, guid: c5db7b5da57b1334f913772d469d28da,
+    type: 2}
 --- !u!135 &135289747902031094
 SphereCollider:
   m_ObjectHideFlags: 1

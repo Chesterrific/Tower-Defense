@@ -4,10 +4,13 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour {
 
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
-    private GameObject turret;
-    private Renderer rend;
+    [Header("Optional")]
+    public GameObject turret; //can place turret on any node
+
+    private Renderer rend; //changes object color based on hoverColor
     private Color startColor;
 
     BuildManager buildManager;
@@ -27,10 +30,17 @@ public class Node : MonoBehaviour {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (buildManager.GetTurretToBuild() == null)
+        if (!buildManager.CanBuild) //checks if turretToBuild has been initialized.
             return;
 
-        rend.material.color = hoverColor;
+        if (buildManager.HasMoney)
+        {
+            rend.material.color = hoverColor;
+        }
+        else
+        {
+            rend.material.color = notEnoughMoneyColor;
+        }
     }
 
     /*
@@ -46,19 +56,25 @@ public class Node : MonoBehaviour {
      */
     private void OnMouseDown()
     {
+        //Checks if mouse is hovering over something else like the shop and disables clicking
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (buildManager.GetTurretToBuild() == null)
+        //checks if turretToBuild has been initialized.
+        if (!buildManager.CanBuild)
             return;
 
+        //Checks if turret is present on node
         if(turret != null)
         {
             Debug.Log("Can't build here!");
             return;
         }
 
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+        buildManager.BuildTurretOn(this); //calls buildManager function to build turret on node
+    }
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
     }
 }
