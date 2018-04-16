@@ -44,7 +44,7 @@ public class Node : MonoBehaviour {
     }
 
     /*
-     * Detects mouse leaving object area and calls function
+     * Detects mouse leaving object area and calls function.
      */
     private void OnMouseExit()
     {
@@ -56,22 +56,26 @@ public class Node : MonoBehaviour {
      */
     private void OnMouseDown()
     {
-        //Checks if mouse is hovering over something else like the shop and disables clicking
+        //Checks if mouse is hovering over something else like the shop and disables clicking.
         if (EventSystem.current.IsPointerOverGameObject())
-            return;
-
-        //checks if turretToBuild has been initialized.
-        if (!buildManager.CanBuild)
-            return;
-
-        //Checks if turret is present on node
-        if(turret != null)
         {
-            Debug.Log("Can't build here!");
             return;
         }
 
-        buildManager.BuildTurretOn(this); //calls buildManager function to build turret on node
+        //Checks if turret is present on node, select node.
+        if(turret != null)
+        {
+            buildManager.SelectNode(this);
+            return;
+        }
+
+        //checks if turretToBuild has been initialized.
+        if (!buildManager.CanBuild)
+        {
+            return;
+        }
+            
+        buildManager.BuildTurretOn(this); //calls buildManager function to build turret on node.
     }
     public Vector3 GetBuildPosition()
     {
