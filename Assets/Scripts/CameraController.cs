@@ -2,8 +2,6 @@
 
 public class CameraController : MonoBehaviour {
 
-    private bool doMovement = true;
-
     public float panSpeed = 30f;
     public float panBorderThickness = 10;
     public float scrollSpeed = 5f;
@@ -16,17 +14,6 @@ public class CameraController : MonoBehaviour {
         if (GameManager.GameIsOver)
         {
             this.enabled = false;
-            return;
-        }
-
-        //enables or disables movement.
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            doMovement = !doMovement;
-        }
-        //checks if movement has been set to disabled.
-        if (!doMovement)
-        {
             return;
         }
         //up (mouse movement with commented code)
