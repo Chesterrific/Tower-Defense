@@ -13,6 +13,7 @@ public class NodeUI : MonoBehaviour {
 	public void SetTarget(Node t)
     {
         target = t;
+        //Displays options menu above turret
         transform.position = target.GetBuildPosition();
 
         sellAmount.text = "$" + target.turretBlueprint.GetSellAmount();
@@ -31,6 +32,7 @@ public class NodeUI : MonoBehaviour {
         ui.SetActive(true);
     }
 
+    //Hides options menu
     public void Hide()
     {
         ui.SetActive(false);
